@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 20% 6%;
+    --foreground: 43 30% 90%;
+
+    --card: 240 18% 10%;
+    --card-foreground: 43 30% 90%;
+
+    --popover: 240 18% 8%;
+    --popover-foreground: 43 30% 90%;
+
+    --primary: 43 56% 54%;
+    --primary-foreground: 240 20% 6%;
+
+    --secondary: 240 15% 15%;
+    --secondary-foreground: 43 30% 90%;
+
+    --muted: 240 15% 18%;
+    --muted-foreground: 43 20% 60%;
+
+    --accent: 30 70% 50%;
+    --accent-foreground: 240 20% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 43 30% 25%;
+    --input: 240 15% 18%;
+    --ring: 43 56% 54%;
+
+    --radius: 0.5rem;
+
+    /* Custom magical colors */
+    --gold: 43 56% 54%;
+    --gold-light: 43 60% 70%;
+    --gold-dark: 43 50% 40%;
+    --navy: 240 20% 6%;
+    --navy-light: 240 18% 12%;
+    --parchment: 40 30% 92%;
+    --gryffindor: 0 70% 45%;
+    --slytherin: 140 50% 30%;
+    --ravenclaw: 220 60% 45%;
+    --hufflepuff: 45 80% 50%;
+
+    --sidebar-background: 240 18% 8%;
+    --sidebar-foreground: 43 30% 90%;
+    --sidebar-primary: 43 56% 54%;
+    --sidebar-primary-foreground: 240 20% 6%;
+    --sidebar-accent: 240 15% 15%;
+    --sidebar-accent-foreground: 43 30% 90%;
+    --sidebar-border: 43 30% 20%;
+    --sidebar-ring: 43 56% 54%;
+  }
+
+  .dark {
+    --background: 240 20% 6%;
+    --foreground: 43 30% 90%;
+    --card: 240 18% 10%;
+    --card-foreground: 43 30% 90%;
+    --popover: 240 18% 8%;
+    --popover-foreground: 43 30% 90%;
+    --primary: 43 56% 54%;
+    --primary-foreground: 240 20% 6%;
+    --secondary: 240 15% 15%;
+    --secondary-foreground: 43 30% 90%;
+    --muted: 240 15% 18%;
+    --muted-foreground: 43 20% 60%;
+    --accent: 30 70% 50%;
+    --accent-foreground: 240 20% 6%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 43 30% 20%;
+    --input: 240 15% 18%;
+    --ring: 43 56% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+  }
+}
+
+@layer utilities {
+  .font-magical {
+    font-family: 'Cinzel', serif;
+  }
+
+  .font-body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(43 60% 70%) 0%, hsl(43 56% 54%) 50%, hsl(43 50% 40%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-magical {
+    background: linear-gradient(180deg, hsl(240 20% 6%) 0%, hsl(240 18% 12%) 100%);
+  }
+
+  .border-gradient-gold {
+    border-image: linear-gradient(135deg, hsl(43 60% 70%), hsl(43 50% 40%)) 1;
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 20px hsl(43 56% 54% / 0.3), 0 0 40px hsl(43 56% 54% / 0.2);
+  }
+
+  .glow-gold-intense {
+    box-shadow: 0 0 30px hsl(43 56% 54% / 0.5), 0 0 60px hsl(43 56% 54% / 0.3), 0 0 100px hsl(43 56% 54% / 0.2);
+  }
+}
+
+/* Magical animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsl(43 56% 54% / 0.3); }
+  50% { box-shadow: 0 0 40px hsl(43 56% 54% / 0.6); }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fade-in-up 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  will-change: opacity, transform;
+}
+
+.animate-slide-up {
+  opacity: 0;
+  animation: slide-up 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  will-change: opacity, transform;
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 20s linear infinite;
+}
+
+/* Delay utilities for staggered animations */
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+.animation-delay-600 { animation-delay: 600ms; }
+.animation-delay-800 { animation-delay: 800ms; }
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(240 20% 6%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(43 56% 54% / 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(43 56% 54% / 0.7);
+}
+
+/* Stars background effect */
+.stars-bg {
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, hsl(43 56% 54% / 0.3), transparent),
+    radial-gradient(2px 2px at 40px 70px, hsl(43 60% 70% / 0.2), transparent),
+    radial-gradient(1px 1px at 90px 40px, hsl(43 56% 54% / 0.4), transparent),
+    radial-gradient(2px 2px at 130px 80px, hsl(43 60% 70% / 0.3), transparent),
+    radial-gradient(1px 1px at 160px 120px, hsl(43 56% 54% / 0.2), transparent);
+  background-size: 200px 200px;
+}
