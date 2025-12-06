@@ -27,4 +27,4 @@ npm run dev
 
 ## Created by
 
-Built with ❤️ by Mehdi
+Built by Mehdi
